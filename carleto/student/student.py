@@ -12,8 +12,11 @@ class Competence(Enum):
 
 
 class Student:
-    def __init__(self, communication, organization, empathy, curiosity, interpretation):
+    def __init__(self, name):
+        self.name = name
         self.competences = dict()
+
+    def set_competences(self, communication, organization, empathy, curiosity, interpretation):
         self.competences[Competence.COMMUNICATION] = communication
         self.competences[Competence.ORGANIZATION] = organization
         self.competences[Competence.EMPATHY] = empathy
