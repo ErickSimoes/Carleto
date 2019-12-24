@@ -11,6 +11,7 @@ with open("test_file.csv", encoding="utf-8") as csv_file:
 
     for row in reader:
         s = Student(row["Nome"])
+        s.set_class(row["Turma"])
 
         communication = row["Quais são suas habilidades mais fortes? [Comunicação]"]
         organization = row["Quais são suas habilidades mais fortes? [Organização]"]
@@ -25,3 +26,4 @@ with open("test_file.csv", encoding="utf-8") as csv_file:
 for s in students:
     print(s.name)
     print(s.competences[Competence.COMMUNICATION])
+    print(s.room_class)

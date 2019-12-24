@@ -23,6 +23,8 @@ class Student:
         self.competences[Competence.CURIOSITY] = curiosity
         self.competences[Competence.INTERPRETATION] = interpretation
 
+    def set_class(self, room_class: str):
+        self.room_class = room_class
 
 class TemplateStudent(Student):
     def __init__(self, name: str, preferences: list):
