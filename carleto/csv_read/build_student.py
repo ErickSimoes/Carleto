@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import csv
-from typing import List
 
 from carleto.student.student import Student, Competence
 
-students: List[Student] = []
+students = []
 
 with open("test_file.csv", encoding="utf-8") as csv_file:
     reader = csv.DictReader(csv_file)
