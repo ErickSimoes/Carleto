@@ -16,7 +16,7 @@ class Student:
         self.name = name
         self.competences = dict()
 
-    def set_competences(self, communication, organization, empathy, curiosity, interpretation):
+    def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
         self.competences[Competence.COMMUNICATION] = communication
         self.competences[Competence.ORGANIZATION] = organization
         self.competences[Competence.EMPATHY] = empathy
@@ -25,6 +25,6 @@ class Student:
 
 
 class TemplateStudent(Student):
-    def __init__(self, communication, organization, empathy, curiosity, interpretation, preferences):
-        super().__init__(communication, organization, empathy, curiosity, interpretation)
+    def __init__(self, name, preferences):
+        super().__init__(name)
         self.preferences = preferences
