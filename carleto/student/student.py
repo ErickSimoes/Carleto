@@ -12,7 +12,7 @@ class Competence(Enum):
 
 
 class Student:
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         self.competences = dict()
 
@@ -25,6 +25,6 @@ class Student:
 
 
 class TemplateStudent(Student):
-    def __init__(self, name, preferences):
+    def __init__(self, name: str, preferences: list):
         super().__init__(name)
         self.preferences = preferences
