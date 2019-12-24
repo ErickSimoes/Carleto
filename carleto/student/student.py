@@ -26,6 +26,7 @@ class Student:
     def set_class(self, room_class: str):
         self.room_class = room_class
 
+
 class TemplateStudent(Student):
     def __init__(self, name: str, preferences: list):
         super().__init__(name)
