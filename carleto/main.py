@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from carleto.utils.build_student import build_student_from_csv
+from carleto.utils.build_students import build_student_from_csv
 from carleto.student.student import TemplateStudent, Role
 
 facilitator = TemplateStudent("facilitator", Role.FACILITATOR)
