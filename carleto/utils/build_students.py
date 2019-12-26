@@ -4,7 +4,7 @@ import csv
 from carleto.student.student import Student
 
 
-def build_student_from_csv(csv_source: str) -> list:
+def build_students_from_csv(csv_source: str) -> list:
     students = []
 
     with open(csv_source, encoding="utf-8") as csv_file:
