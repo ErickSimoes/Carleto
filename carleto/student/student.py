@@ -3,6 +3,14 @@
 from enum import Enum
 
 
+class Role(Enum):
+    FACILITATOR = 1
+    RESEARCHER = 2
+    ANALYST = 3
+    REVISER = 4
+    SUPPORT = 5
+
+
 class Competence(Enum):
     COMMUNICATION = 1
     ORGANIZATION = 2
