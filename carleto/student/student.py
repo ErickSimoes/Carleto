@@ -15,6 +15,7 @@ class Student:
     def __init__(self, name: str):
         self.name = name
         self.competences = dict()
+        self.room_class = ""
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
         self.competences[Competence.COMMUNICATION] = communication
