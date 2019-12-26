@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from carleto.csv_read.build_student import build_student_from_csv
+from carleto.utils.build_student import build_student_from_csv
 from carleto.student.student import TemplateStudent, Role
 
 facilitator = TemplateStudent("facilitator", Role.FACILITATOR)
@@ -20,7 +20,7 @@ support.set_competences(5, 2, 4, 1, 3)
 
 templates = [facilitator, researcher, analyst, reviser, support]
 
-students = build_student_from_csv("csv_read/test_file.csv")
+students = build_student_from_csv("utils/test_file.csv")
 for student in students:
     print(">>", student.name)
     student.calculate_score(templates)
