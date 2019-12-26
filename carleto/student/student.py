@@ -36,7 +36,9 @@ class Student:
         self.room_class = room_class
 
 
+# TODO: Dismiss the use of a preference list. Instead, use the 3 highest value attributes
 class TemplateStudent(Student):
-    def __init__(self, name: str, preferences: list):
+    def __init__(self, name: str, role: Role, preferences: list):
         super().__init__(name)
+        self.role = role
         self.preferences = preferences
