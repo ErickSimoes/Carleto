@@ -24,6 +24,7 @@ class Student:
         self.name = name
         self.competences = dict()
         self.room_class = ""
+        self.score = dict()
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
         self.competences[Competence.COMMUNICATION] = int(communication)
@@ -34,6 +35,15 @@ class Student:
 
     def set_class(self, room_class: str):
         self.room_class = room_class
+
+# TODO: Recive a list of templates to calculate
+    def calculate_score(self, template):
+        score = 0
+        for competence in template.competences:
+            if template.competences[competence] >= 3:
+                score += abs(abs(self.competences[competence] - template.competences[competence]) - 5)
+
+        self.score[template.role] = score
 
 
 # TODO: Dismiss the use of a preference list. Instead, use the 3 highest value attributes
