@@ -46,9 +46,7 @@ class Student:
         self.score[template.role] = score
 
 
-# TODO: Dismiss the use of a preference list. Instead, use the 3 highest value attributes
 class TemplateStudent(Student):
-    def __init__(self, name: str, role: Role, preferences: list):
+    def __init__(self, name: str, role: Role):
         super().__init__(name)
         self.role = role
-        self.preferences = preferences
