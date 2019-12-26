@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from carleto.student.student import TemplateStudent, Competence, Role
 from carleto.csv_read.build_student import build_student_from_csv
+from carleto.student.student import TemplateStudent, Role
 
 facilitator = TemplateStudent("facilitator", Role.FACILITATOR)
 facilitator.set_competences(3, 5, 4, 1, 2)
