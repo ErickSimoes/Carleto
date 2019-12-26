@@ -26,11 +26,11 @@ class Student:
         self.room_class = ""
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
-        self.competences[Competence.COMMUNICATION] = communication
-        self.competences[Competence.ORGANIZATION] = organization
-        self.competences[Competence.EMPATHY] = empathy
-        self.competences[Competence.CURIOSITY] = curiosity
-        self.competences[Competence.INTERPRETATION] = interpretation
+        self.competences[Competence.COMMUNICATION] = int(communication)
+        self.competences[Competence.ORGANIZATION] = int(organization)
+        self.competences[Competence.EMPATHY] = int(empathy)
+        self.competences[Competence.CURIOSITY] = int(curiosity)
+        self.competences[Competence.INTERPRETATION] = int(interpretation)
 
     def set_class(self, room_class: str):
         self.room_class = room_class
