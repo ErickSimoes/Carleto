@@ -36,14 +36,14 @@ class Student:
     def set_class(self, room_class: str):
         self.room_class = room_class
 
-# TODO: Recive a list of templates to calculate
-    def calculate_score(self, template):
-        score = 0
-        for competence in template.competences:
-            if template.competences[competence] >= 3:
-                score += abs(abs(self.competences[competence] - template.competences[competence]) - 5)
+    def calculate_score(self, templates):
+        for template in templates:
+            score = 0
+            for competence in template.competences:
+                if template.competences[competence] >= 3:
+                    score += abs(abs(self.competences[competence] - template.competences[competence]) - 5)
 
-        self.score[template.role] = score
+            self.score[template.role] = score
 
 
 class TemplateStudent(Student):
