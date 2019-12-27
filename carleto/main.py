@@ -24,7 +24,10 @@ students = build_students_from_csv("utils/test_file.csv")
 for student in students:
     student.calculate_score(templates)
 
-# TODO: Receive the dict returned by this method
-roles_by_class(students)
+room_classes = ["1A", "1B", "1C", "1D", "2A", "2B", "2C", "2D", "3A", "3B", "3C", "3D"]
+
+for room in room_classes:
+    # TODO: Receive the dict returned by this method
+    roles_by_class(students, room)
 
 # TODO: Save in file the roles x students name by class
