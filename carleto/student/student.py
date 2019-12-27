@@ -24,7 +24,9 @@ class Student:
         self.name = name
         self.competences = dict()
         self.room_class = ""
+        # TODO: Fix typo of attribute to plural
         self.score = dict()
+        self.used = False
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
         self.competences[Competence.COMMUNICATION] = int(communication)
