@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from carleto.utils.build_roles_by_class import roles_by_class
 from carleto.utils.build_students import build_students_from_csv
 from carleto.student.student import TemplateStudent, Role
 
@@ -22,8 +22,9 @@ templates = [facilitator, researcher, analyst, reviser, support]
 
 students = build_students_from_csv("utils/test_file.csv")
 for student in students:
-    print(">>", student.name)
     student.calculate_score(templates)
-    for s in student.score:
-        print(s, student.score[s])
 
+# TODO: Receive the dict returned by this method
+roles_by_class(students)
+
+# TODO: Save in file the roles x students name by class
