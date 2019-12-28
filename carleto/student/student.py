@@ -24,8 +24,7 @@ class Student:
         self.name = name
         self.competences = dict()
         self.room_class = ""
-        # TODO: Fix typo of attribute to plural
-        self.score = dict()
+        self.scores = dict()
         self.used = False
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
@@ -45,7 +44,7 @@ class Student:
                 if template.competences[competence] >= 3:
                     score += abs(abs(self.competences[competence] - template.competences[competence]) - 5)
 
-            self.score[template.role] = score
+            self.scores[template.role] = score
 
 
 class TemplateStudent(Student):

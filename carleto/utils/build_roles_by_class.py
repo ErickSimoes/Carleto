@@ -14,8 +14,8 @@ def roles_by_class(students: list, room_class: str) -> dict:
     while searching:
         for student in students:
             if student.room_class == room_class:
-                for role in student.score:
-                    if student.score[role] == highest_score and not student.used and len(roles[role]) < 9:
+                for role in student.scores:
+                    if student.scores[role] == highest_score and not student.used and len(roles[role]) < 9:
                         student.used = True
                         roles[role].append(student)
         highest_score -= 1
