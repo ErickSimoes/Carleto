@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from typing import Dict, List
 from carleto.student.student import Student, Role
 
