@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from carleto.utils.build_roles_by_class import roles_by_class
-from carleto.utils.build_students import build_students_from_csv
+from typing import Dict
 from carleto.student.student import TemplateStudent, Role
+from carleto.utils.build_roles_by_class import roles_by_class
+from carleto.utils.build_students import build_students_from_csv, build_csv_output
 
 facilitator = TemplateStudent("facilitator", Role.FACILITATOR)
 facilitator.set_competences(3, 5, 4, 1, 2)
@@ -25,16 +26,9 @@ for student in students:
     student.calculate_score(templates)
 
 room_classes = ["1A", "1B", "1C", "1D", "2A", "2B", "2C", "2D", "3A", "3B", "3C", "3D"]
+rooms: Dict[str, dict] = dict()
 
 for room in room_classes:
-    roles = roles_by_class(students, room)
+    rooms[room] = roles_by_class(students, room)
 
-    print("Room:", room)
-    for role in roles:
-        print(">>", role, len(roles[role]))
-        for student in roles[role]:
-            print(student.name)
-        print("-" * 5)
-    print("#" * 10)
-
-# TODO: Save in file the roles x students name by class
+build_csv_output('teams_output.csv', rooms)
