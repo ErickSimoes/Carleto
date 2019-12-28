@@ -1,7 +1,7 @@
 from carleto.student.student import Student, Role
 
 
-def roles_by_class(students: list, room_class: str):
+def roles_by_class(students: list, room_class: str) -> dict:
     student: Student
 
     roles = {Role.FACILITATOR: [],
@@ -12,7 +12,6 @@ def roles_by_class(students: list, room_class: str):
 
     searching = True
     highest_score = 15
-    count = 0
     while searching:
         for student in students:
             if student.room_class == room_class:
@@ -20,16 +19,9 @@ def roles_by_class(students: list, room_class: str):
                     if student.score[score] == highest_score and student.used is False:
                         if len(roles[score]) < 9:
                             student.used = True
-                            count += 1
                             roles[score].append(student)
         highest_score -= 1
         if highest_score < 3:
-            print(count)
             searching = False
 
-    # TODO: Return roles and remove this print struct
-    for role in roles:
-        print(">>", role, len(roles[role]))
-        for student in roles[role]:
-            print(student.name)
-        print("-"*5)
+    return roles
