@@ -36,5 +36,5 @@ def build_csv_output(file_output: str, rooms: dict):
             print('>>', room)
             for role in rooms[room]:
                 for student in rooms[room][role]:
-                    print(student.name, room, role.name)
-                    writer.writerow({'NAME': student.name, 'CLASS': room, 'ROLE': role.name})
+                    print(student.name, room, student.role.name)
+                    writer.writerow({'NAME': student.name, 'CLASS': room, 'ROLE': student.role.name})

@@ -19,14 +19,13 @@ class Competence(Enum):
     INTERPRETATION = 5
 
 
-# TODO: Add role attribute in student
 class Student:
     def __init__(self, name: str):
         self.name = name
         self.competences = dict()
         self.room_class = ""
         self.scores = dict()
-        self.used = False
+        self.role: Role = None
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
         self.competences[Competence.COMMUNICATION] = int(communication)
