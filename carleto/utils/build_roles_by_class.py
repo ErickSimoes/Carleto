@@ -1,14 +1,16 @@
+from typing import Dict, List, Any
+
 from carleto.student.student import Student, Role
 
 
 def roles_by_class(students: list, room_class: str) -> dict:
     student: Student
 
-    roles = {Role.FACILITATOR: [],
-             Role.RESEARCHER: [],
-             Role.ANALYST: [],
-             Role.REVISER: [],
-             Role.SUPPORT: []}
+    roles: Dict[Role, List[Student]] = {Role.FACILITATOR: [],
+                                        Role.RESEARCHER: [],
+                                        Role.ANALYST: [],
+                                        Role.REVISER: [],
+                                        Role.SUPPORT: []}
 
     searching = True
     highest_score = 15
