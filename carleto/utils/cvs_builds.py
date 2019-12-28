@@ -4,7 +4,6 @@ import csv
 from carleto.student.student import Student
 
 
-# TODO: Rename this module name to csv_builds
 def build_students_from_csv(csv_source: str) -> list:
     students = []
 

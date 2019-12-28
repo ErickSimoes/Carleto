@@ -2,7 +2,7 @@
 from typing import Dict
 from carleto.student.student import TemplateStudent, Role
 from carleto.utils.build_roles_by_class import roles_by_class
-from carleto.utils.build_students import build_students_from_csv, build_csv_output
+from carleto.utils.cvs_builds import build_students_from_csv, build_csv_output
 
 facilitator = TemplateStudent("facilitator", Role.FACILITATOR)
 facilitator.set_competences(3, 5, 4, 1, 2)
