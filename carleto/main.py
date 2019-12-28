@@ -27,7 +27,14 @@ for student in students:
 room_classes = ["1A", "1B", "1C", "1D", "2A", "2B", "2C", "2D", "3A", "3B", "3C", "3D"]
 
 for room in room_classes:
-    # TODO: Receive the dict returned by this method
-    roles_by_class(students, room)
+    roles = roles_by_class(students, room)
+
+    print("Room:", room)
+    for role in roles:
+        print(">>", role, len(roles[role]))
+        for student in roles[role]:
+            print(student.name)
+        print("-" * 5)
+    print("#" * 10)
 
 # TODO: Save in file the roles x students name by class
