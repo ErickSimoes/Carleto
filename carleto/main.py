@@ -21,7 +21,7 @@ support.set_competences(5, 2, 4, 1, 3)
 
 templates = [facilitator, researcher, analyst, reviser, support]
 
-students = build_students_from_csv("utils/test_file.csv")
+students = build_students_from_csv("test_file.csv")
 for student in students:
     student.calculate_score(templates)
 
