@@ -4,6 +4,7 @@ import csv
 from carleto.student.student import Student
 
 
+# TODO: Rename this module name to csv_builds
 def build_students_from_csv(csv_source: str) -> list:
     students = []
 
@@ -24,3 +25,17 @@ def build_students_from_csv(csv_source: str) -> list:
 
             students.append(student)
     return students
+
+
+def build_csv_output(file_output: str, rooms: dict):
+    with open(file_output, 'w', newline='', encoding='utf-8') as csv_file:
+        fieldnames = ['NAME', 'CLASS', 'ROLE']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for room in rooms:
+            print('>>', room)
+            for role in rooms[room]:
+                for student in rooms[room][role]:
+                    print(student.name, room, role.name)
+                    writer.writerow({'NAME': student.name, 'CLASS': room, 'ROLE': role.name})
