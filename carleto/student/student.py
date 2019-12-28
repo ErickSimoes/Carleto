@@ -20,12 +20,12 @@ class Competence(Enum):
 
 
 class Student:
-    def __init__(self, name: str):
+    def __init__(self, name: str, role: Role = None):
         self.name = name
         self.competences = dict()
         self.room_class = ""
         self.scores = dict()
-        self.role: Role = None
+        self.role: Role = role
 
     def set_competences(self, communication: int, organization: int, empathy: int, curiosity: int, interpretation: int):
         self.competences[Competence.COMMUNICATION] = int(communication)
@@ -49,5 +49,4 @@ class Student:
 
 class TemplateStudent(Student):
     def __init__(self, name: str, role: Role):
-        super().__init__(name)
-        self.role = role
+        super().__init__(name, role)
