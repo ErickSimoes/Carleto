@@ -19,6 +19,7 @@ class Competence(Enum):
     INTERPRETATION = 5
 
 
+# TODO: Add role attribute in student
 class Student:
     def __init__(self, name: str):
         self.name = name
