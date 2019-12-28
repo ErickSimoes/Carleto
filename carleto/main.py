@@ -21,7 +21,7 @@ support.set_competences(5, 2, 4, 1, 3)
 
 templates = [facilitator, researcher, analyst, reviser, support]
 
-students = build_students_from_csv("test_file.csv")
+students = build_students_from_csv("input_file.csv")
 for student in students:
     student.calculate_score(templates)
 
@@ -31,4 +31,4 @@ rooms: Dict[str, dict] = dict()
 for room in room_classes:
     rooms[room] = roles_by_class(students, room)
 
-build_csv_output('teams_output.csv', rooms)
+build_csv_output('output_file.csv', rooms)
